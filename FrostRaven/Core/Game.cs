@@ -45,6 +45,15 @@ namespace FrostRaven.Core
         private void OnGameBegin()
         {
             //TODO: Input system
+            unsafe
+            {
+#pragma warning disable CS8500
+                fixed (IWindow* p_window = &_window)
+                {
+                    GameTime.Run(p_window);
+                }
+#pragma warning restore CS8500
+            }
             OnBegin();
         }
 
@@ -71,8 +80,10 @@ namespace FrostRaven.Core
 
         public void Dispose()
         {
+            GameTime.Finish();
             if(_window != null)
                 _window.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void OnWindowResized() { }

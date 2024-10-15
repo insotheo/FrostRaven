@@ -22,6 +22,7 @@ namespace SandBox
 
         protected override void OnWindowClosing()
         {
+            Log.Info($"You played for {GameTime.GetElapsedTime()} seconds!");
             Log.Warn("Goodbye!");
         }
 
