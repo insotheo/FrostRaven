@@ -4,10 +4,14 @@ namespace SandBox
 {
     class Program
     {
-        static void Main()
+        private static void Main()
         {
             Log.DefaultSender = "SandBox";
             Log.Trace("Hello, World!");
+            using(MyGame game = new MyGame())
+            {
+                game.Run();
+            }
         }
     }
 }

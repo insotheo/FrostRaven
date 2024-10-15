@@ -1,10 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
 	<Copyright>Insotheo</Copyright>
 	<OutDir>..\Bin\Engine-build\FrostRaven</OutDir>
 	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
+	<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Silk.NET" Version="2.21.0" />
+  </ItemGroup>
 
 </Project>
