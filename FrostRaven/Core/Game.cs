@@ -8,7 +8,7 @@ namespace FrostRaven.Core
     {
         private int _windowWidth;
         private int _windowHeight;
-        private readonly string _title;
+        private string _title;
 
         private IWindow _window;
         private WindowOptions _windowOptions = WindowOptions.Default;
@@ -69,11 +69,6 @@ namespace FrostRaven.Core
             _window.Run();
         }
 
-        protected (int Width, int Height) GetWindowSize()
-        {
-            return (_windowWidth, _windowHeight);
-        }
-
         public void Dispose()
         {
             if(_window != null)
@@ -83,5 +78,25 @@ namespace FrostRaven.Core
         protected virtual void OnWindowResized() { }
         protected virtual void OnWindowClosing() { }
         protected virtual void OnBegin() { }
+
+        //Window settings
+        protected void SetVSync(bool state) => _window.VSync = state;
+        protected void SetWindowState(WindowSettings.WindowState state) => _window.WindowState = (WindowState)state;
+        protected void SetWindowStyle(WindowSettings.WindowBorder border) => _window.WindowBorder = (WindowBorder)border;
+        protected void SetWindowTitle(string title) => _window.Title = _title = Console.Title = title;
+        protected void SetWindowSize(uint width, uint height)
+        {
+            _windowWidth = (int)width;
+            _windowHeight = (int)height;
+            _window.Size = new Vector2D<int>((int)width, (int)height);
+        }
+
+        //Window getters
+        protected bool GetVSync() => _window.VSync;
+        protected WindowSettings.WindowState GetWindowState() => (WindowSettings.WindowState)_window.WindowState;
+        protected WindowSettings.WindowBorder GetWindowBorder() => (WindowSettings.WindowBorder)_window.WindowBorder;
+        protected string GetWindowTitle() => _title;
+        protected (int Width, int Height) GetWindowSize() => (_windowWidth, _windowHeight);
+
     }
 }

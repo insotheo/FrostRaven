@@ -7,7 +7,7 @@ namespace SandBox
         public MyGame() : base(width: 800, height: 600,
             title: "SandBox game", isVSyncEnabled: true)
         {
-
+            SetWindowSize(1280, 720);
         }
 
         protected override void OnBegin()
