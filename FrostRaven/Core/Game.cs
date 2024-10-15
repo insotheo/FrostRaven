@@ -6,8 +6,8 @@ namespace FrostRaven.Core
 {
     public abstract class Game : IDisposable
     {
-        private readonly int _windowWidth;
-        private readonly int _windowHeight;
+        private int _windowWidth;
+        private int _windowHeight;
         private readonly string _title;
 
         private IWindow _window;
@@ -28,14 +28,24 @@ namespace FrostRaven.Core
 
             _window = Window.Create(_windowOptions);
 
-            _window.Load += OnGameLoad;
+            _window.Load += OnGameBegin;
             _window.Update += OnGameUpdate;
             _window.Render += OnGameRender;
+            _window.Resize += OnGameWindowResized;
+            _window.Closing += OnGameClosing;
         }
 
-        private void OnGameLoad()
+        private void OnGameWindowResized(Vector2D<int> newSize)
+        {
+            _windowWidth = newSize.X;
+            _windowHeight = newSize.Y;
+            OnWindowResized();
+        }
+
+        private void OnGameBegin()
         {
             //TODO: Input system
+            OnBegin();
         }
 
         private void OnGameUpdate(double dt) //dt - delta time
@@ -47,6 +57,8 @@ namespace FrostRaven.Core
         {
             
         }
+
+        private void OnGameClosing() => OnWindowClosing();
 
         public void Run()
         {
@@ -68,5 +80,8 @@ namespace FrostRaven.Core
                 _window.Dispose();
         }
 
+        protected virtual void OnWindowResized() { }
+        protected virtual void OnWindowClosing() { }
+        protected virtual void OnBegin() { }
     }
 }

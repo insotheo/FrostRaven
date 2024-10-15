@@ -7,7 +7,23 @@ namespace SandBox
         public MyGame() : base(width: 800, height: 600,
             title: "SandBox game", isVSyncEnabled: true)
         {
-            Log.Info(GetWindowSize());
+
         }
+
+        protected override void OnBegin()
+        {
+            Log.Info("Game is running!");
+        }
+
+        protected override void OnWindowResized()
+        {
+            Log.Trace(GetWindowSize());
+        }
+
+        protected override void OnWindowClosing()
+        {
+            Log.Warn("Goodbye!");
+        }
+
     }
 }
