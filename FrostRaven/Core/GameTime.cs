@@ -26,7 +26,7 @@ namespace FrostRaven.Core
             return p_window->Time;
         }
 
-        public static void Finish() => p_window = null;
+        internal static void Finish() => p_window = null;
 
     }
 }

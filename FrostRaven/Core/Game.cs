@@ -1,6 +1,8 @@
 ﻿using System;
 using Silk.NET.Windowing;
 using Silk.NET.Maths;
+using Silk.NET.Input;
+using FrostRaven.InputSystem;
 
 namespace FrostRaven.Core
 {
@@ -44,7 +46,15 @@ namespace FrostRaven.Core
 
         private void OnGameBegin()
         {
-            //TODO: Input system
+            //Input system
+            IInputContext context = _window.CreateInput();
+            foreach(IKeyboard keyboard in context.Keyboards)
+            {
+                keyboard.KeyDown += Input.OnWindowKeyDown;
+                keyboard.KeyUp += Input.OnWindowKeyUp;
+            }
+
+            //GameTime.cs
             unsafe
             {
 #pragma warning disable CS8500
@@ -59,7 +69,7 @@ namespace FrostRaven.Core
 
         private void OnGameUpdate(double dt) //dt - delta time
         {
-
+            Input.ClearUpInput();
         }
 
         private void OnGameRender(double dt) //dt - delta time
