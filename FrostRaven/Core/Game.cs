@@ -3,6 +3,7 @@ using Silk.NET.Windowing;
 using Silk.NET.Maths;
 using Silk.NET.Input;
 using FrostRaven.InputSystem;
+using FrostRaven.LevelsManagement;
 
 namespace FrostRaven.Core
 {
@@ -64,11 +65,15 @@ namespace FrostRaven.Core
                 }
 #pragma warning restore CS8500
             }
+
+
+            LevelsManager.Init();
             OnBegin();
         }
 
         private void OnGameUpdate(double dt) //dt - delta time
         {
+            LevelsManager.CallCurrentLevelOnUpdate((float)dt);
             Input.ClearUpInput();
         }
 
@@ -93,6 +98,7 @@ namespace FrostRaven.Core
             GameTime.Finish();
             if(_window != null)
                 _window.Dispose();
+            LevelsManager.Finish();
             GC.SuppressFinalize(this);
         }
 

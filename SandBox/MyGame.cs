@@ -1,4 +1,5 @@
 ﻿using FrostRaven.Core;
+using FrostRaven.LevelsManagement;
 
 namespace SandBox
 {
@@ -13,6 +14,8 @@ namespace SandBox
         protected override void OnBegin()
         {
             Log.Info("Game is running!");
+            LevelsManager.AddLevel("TEST_LEVEL", new TestLevel());
+            LevelsManager.RunLevel("TEST_LEVEL");
         }
 
         protected override void OnWindowResized()
