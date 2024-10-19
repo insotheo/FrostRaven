@@ -17,6 +17,10 @@ namespace SandBox
             {
                 Log.Info(dt);
             }
+            if (Input.IsKeyUp(KeyCode.Escape))
+            {
+                GameInfo.QuitGame();
+            }
         }
     }
 }

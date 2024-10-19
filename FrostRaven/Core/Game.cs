@@ -61,7 +61,7 @@ namespace FrostRaven.Core
 #pragma warning disable CS8500
                 fixed (IWindow* p_window = &_window)
                 {
-                    GameTime.Run(p_window);
+                    GameInfo.Run(p_window);
                 }
 #pragma warning restore CS8500
             }
@@ -95,7 +95,7 @@ namespace FrostRaven.Core
 
         public void Dispose()
         {
-            GameTime.Finish();
+            GameInfo.Finish();
             if(_window != null)
                 _window.Dispose();
             LevelsManager.Finish();
