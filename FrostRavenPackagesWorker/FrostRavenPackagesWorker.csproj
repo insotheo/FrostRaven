@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	<Copyright>Insotheo</Copyright>
+	<OutDir>..\Bin\Engine-build\FrostRavenPackagesWorker</OutDir>
+	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
+  </PropertyGroup>
+
+</Project>

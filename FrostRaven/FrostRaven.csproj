@@ -4,12 +4,18 @@
     <TargetFramework>net6.0</TargetFramework>
 	<Copyright>Insotheo</Copyright>
 	<OutDir>..\Bin\Engine-build\FrostRaven</OutDir>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<OutputPath>..\Bin\Engine-build\FrostRaven\EngineBin</OutputPath>
 	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
 	<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Silk.NET" Version="2.21.0" />
+    <PackageReference Include="Silk.NET" Version="2.21.0" PrivateAssets="Compile" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrostRavenPackagesWorker\FrostRavenPackagesWorker.csproj" PrivateAssets="Compile" />
   </ItemGroup>
 
 </Project>
