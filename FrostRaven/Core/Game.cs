@@ -4,6 +4,8 @@ using Silk.NET.Maths;
 using Silk.NET.Input;
 using FrostRaven.InputSystem;
 using FrostRaven.LevelsManagement;
+using Silk.NET.OpenGL;
+using FrostRaven.Graphics;
 
 namespace FrostRaven.Core
 {
@@ -55,6 +57,8 @@ namespace FrostRaven.Core
                 keyboard.KeyUp += Input.OnWindowKeyUp;
             }
 
+            GLContext.InitGLContext(_window.CreateOpenGL());
+
             //GameTime.cs
             unsafe
             {
@@ -79,7 +83,8 @@ namespace FrostRaven.Core
 
         private void OnGameRender(double dt) //dt - delta time
         {
-            
+            GLContext.Clear(1, 0, 0, 1);
+            GLContext.Clear();
         }
 
         private void OnGameClosing() => OnWindowClosing();

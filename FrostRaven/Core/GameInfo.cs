@@ -1,4 +1,5 @@
 ﻿using Silk.NET.Windowing;
+using System;
 
 namespace FrostRaven.Core
 {
@@ -19,20 +20,28 @@ namespace FrostRaven.Core
 
         public static double GetElapsedTime()
         {
-            if(p_window == null)
+            try
             {
-                return -1;
+                if (p_window == null)
+                {
+                    return -1;
+                }
+                return p_window->Time;
             }
-            return p_window->Time;
+            catch { return -1; }
         }
 
         public static void QuitGame()
         {
-            if(p_window == null)
+            try
             {
-                return;
+                if (p_window == null)
+                {
+                    return;
+                }
+                p_window->Close();
             }
-            p_window->Close();
+            catch { Environment.Exit(0); }
         }
 
         internal static void Finish() => p_window = null;
