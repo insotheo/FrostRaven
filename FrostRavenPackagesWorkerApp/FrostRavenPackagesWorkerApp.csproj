@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	<Copyright>Insotheo</Copyright>
+	<OutDir>..\Bin\Engine-build\FrostRavenPackagesWorkerApp</OutDir>
+	<AppendTargetFrameworkToOutDir>False</AppendTargetFrameworkToOutDir>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>True</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrostRavenPackagesWorker\FrostRavenPackagesWorker.csproj" />
+  </ItemGroup>
+
+</Project>

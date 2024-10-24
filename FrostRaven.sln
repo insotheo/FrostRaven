@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostRaven", "FrostRaven\Fr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBox", "SandBox\SandBox.csproj", "{EE86B704-1364-432F-8B47-47C7C284718C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostRavenPackagesWorker", "FrostRavenPackagesWorker\FrostRavenPackagesWorker.csproj", "{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostRavenPackagesWorker", "FrostRavenPackagesWorker\FrostRavenPackagesWorker.csproj", "{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostRavenPackagesWorkerApp", "FrostRavenPackagesWorkerApp\FrostRavenPackagesWorkerApp.csproj", "{623689C8-F585-40F0-ACC2-BCEC1AAF301A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623689C8-F585-40F0-ACC2-BCEC1AAF301A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623689C8-F585-40F0-ACC2-BCEC1AAF301A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623689C8-F585-40F0-ACC2-BCEC1AAF301A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623689C8-F585-40F0-ACC2-BCEC1AAF301A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7B62CB36-574F-4884-A732-1C19E5068593} = {30A3AF2D-EA93-4A54-9C1F-ABA7263B6BF5}
 		{91E92C36-8960-49FD-ABBA-8F35BE1D1DE5} = {30A3AF2D-EA93-4A54-9C1F-ABA7263B6BF5}
+		{623689C8-F585-40F0-ACC2-BCEC1AAF301A} = {30A3AF2D-EA93-4A54-9C1F-ABA7263B6BF5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FB14079-514F-4B12-A5F5-0B3A30FC7BB3}
